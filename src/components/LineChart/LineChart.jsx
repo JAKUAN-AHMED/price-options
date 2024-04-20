@@ -1,5 +1,5 @@
 // import PropTypes from 'prop-types';
-import { LineChart as MathChart, Line,XAxis,YAxis,BarChart,Bar} from 'recharts';
+import { LineChart as MathChart, Line,XAxis,YAxis,BarChart,Bar, PieChart, Pie, Legend, Tooltip} from 'recharts';
 const LineChart = () => {
     const MathMarksData = [
         { id: 1, name: 'Student 1', mathMark: 85, physicsMark: 78, chemistryMark: 90 },
@@ -28,7 +28,19 @@ const LineChart = () => {
                 <YAxis dataKey="mathMark" />
                 <Bar dataKey="mathMark" fill="#8884d8" />
             </BarChart>
-            
+            <PieChart width={800} height={800}>
+                <Pie
+                dataKey="mathMark"
+                data={MathMarksData}
+                isAnimationActive={true}
+                cx="50%"
+                cy="50%"
+                outerRadius={80}
+                fill="#8884d8"
+                label
+                ></Pie>
+                <Tooltip />
+            </PieChart>
         </div>
     );
 };
